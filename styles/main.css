@@ -1,0 +1,31 @@
+p, li { 
+  color: gray; 
+}
+
+html { 
+  background-color: #6eb0de; 
+} 
+
+body { 
+  background-color: #F5FFE6;
+  border: 3px solid #93a36c;
+  max-width: 600px; 
+  margin: 0 auto;
+  padding: 30px;
+}
+
+img {
+  max-width: 300px;   /* largura máxima */
+  max-height: 300px;  /* altura máxima */
+  width: auto;        /* mantém proporção */
+  height: auto;       /* mantém proporção */
+}
+
+h1 { 
+  font-family: "Sansita", sans-serif; 
+} 
+
+p, li { 
+  color: gray; 
+  font-family: "Kameron", serif; 
+} 
