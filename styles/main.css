@@ -15,10 +15,10 @@ body {
 }
 
 img {
-  max-width: 300px;   /* largura máxima */
-  max-height: 300px;  /* altura máxima */
-  width: auto;        /* mantém proporção */
-  height: auto;       /* mantém proporção */
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;        /* keep the proportion */
+  height: auto;       /* keep the proportion */
 }
 
 h1 { 
