@@ -14,13 +14,6 @@ body {
   padding: 30px;
 }
 
-img {
-  max-width: 300px;
-  max-height: 300px;
-  width: auto;        /* keep the proportion */
-  height: auto;       /* keep the proportion */
-}
-
 h1 { 
   font-family: "Sansita", sans-serif; 
 } 
@@ -29,3 +22,87 @@ p, li {
   color: gray; 
   font-family: "Kameron", serif; 
 } 
+
+.key-points {
+  list-style-position: inside;  /* números entram na mesma linha do texto recuado */
+  padding-left: 5;              /* remove recuo padrão */
+  margin-left: 20px;            /* recuo geral da lista */
+}
+
+
+/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
+
+/* SESSION DEDICATED TO THE IMAGES            */
+
+/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;        /* keep the proportion */
+  height: auto;       /* keep the proportion */
+}
+
+.img-logo-limitation {
+  max-width: 200px;   /* limits the maximum width */
+  height: auto;       /* adjusts height proportionally */
+}
+
+.img-limitation-mario {
+  max-width: 150px;   /* limits the maximum width */
+  height: auto;       /* adjusts height proportionally */
+}
+
+.img-limitation {
+  max-width: 150px;
+  height: auto;
+}
+
+
+/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
+
+/* SESSION DEDICATED TO THE TABLES            */
+
+/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
+
+.tables {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;   /* every text is centralized in the table */
+}
+
+.tables-td td {
+  padding: 15px;
+  vertical-align: top;
+}
+
+.tables-name {
+  margin-top: 8px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+
+/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
+
+/* SESSION DEDICATED TO THE COLOURS           */
+
+/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
+
+.font-red {
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  color: red;
+}
+
+.font-purple {
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  color: purple;
+}
+
+.font-blue {
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  color: blue;
+}
