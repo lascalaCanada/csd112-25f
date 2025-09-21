@@ -30,12 +30,6 @@ p, li {
 }
 
 
-/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
-
-/* SESSION DEDICATED TO THE IMAGES            */
-
-/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
-
 img {
   max-width: 300px;
   max-height: 300px;
@@ -59,12 +53,6 @@ img {
 }
 
 
-/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
-
-/* SESSION DEDICATED TO THE TABLES            */
-
-/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
-
 .tables {
   width: 100%;
   border-collapse: collapse;
@@ -82,12 +70,6 @@ img {
   font-family: Arial, sans-serif;
 }
 
-
-/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
-
-/* SESSION DEDICATED TO THE COLOURS           */
-
-/* *--*--*--*--*--*--*--*--*--*--*--*--*--*-- */
 
 .font-red {
   font-weight: bold;
