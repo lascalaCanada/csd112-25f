@@ -53,6 +53,11 @@ img {
 }
 
 
+.tables-glossary {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 .tables {
   width: 100%;
   border-collapse: collapse;
