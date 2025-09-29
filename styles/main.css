@@ -58,23 +58,30 @@ img {
   border-collapse: collapse;
 }
 
+.logic {
+  text-align: justify;
+}
+
 .tables {
   width: 100%;
   border-collapse: collapse;
   text-align: center;   /* every text is centralized in the table */
 }
 
-.tables-td td {
+.td {
   padding: 15px;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
-.tables-name {
-  margin-top: 8px;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
+.td-name {
+    text-align: left;
 }
 
+  .tables-name {
+    margin-top: 8px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+  }
 
 .font-red {
   font-weight: bold;

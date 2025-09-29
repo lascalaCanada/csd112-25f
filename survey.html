@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando Lascala">
+    <meta name="description"
+        content="Personal website for Fernando Lascala, showcasing favorite things and programming concepts for CSD112.">
+    <title>CSD112 - Lab#2</title>
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kameron&family=Sansita:wght@900&display=swap" rel="stylesheet">
+
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+</head>
+
+<body>
+    <div class="width-wrap">
+        <header id="top">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="links.html">Links</a></li>
+                    <li><a href="glossary.html">Glossary</a></li>
+                    <li>Survey</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div>
+                <h1>Survey</h1>
+
+                    <!-- BEGINNING OF THE FORM CODE -->
+
+                    <form action="https://formspree.io/f/xwprlang" method="post">
+                        <p>
+                            <label for="yourName" class="required">What is your name?</label>
+                            <input type="text" id="yourName" name="yourName" required maxlength="80">
+                        </p>
+                        <p>
+                            <label for="yourEmail" class="required">What is your email?</label>
+                            <input type="email" id="yourEmail" name="yourEmail" required maxlength="80">
+                        </p>
+                        <p>
+                            <label for="yourBestWholeNumber">Which whole number is best?</label>
+                            <input type="number" id="yourBestWholeNumber" name="yourBestWholeNumber" min="1" step="1" max="9999">
+                        </p>
+                        <p>
+                            <label for="yourBestDay">Which day is best?</label>
+                            <input type="date" id="yourBestDay" name="yourBestDay">
+                        </p>
+                        <p>
+                            <label for="theBestBear" class="required">Which bear is best?</label>
+                            <select id="theBestBear" name="theBestBear" required>
+                                <option value="" disabled selected>&nbsp;</option>
+                                <option value="black">Black</option>
+                                <option value="brown">Brown</option>
+                                <option value="care">Care</option>
+                                <option value="panda">Panda</option>
+                                <option value="polar">Polar</option>
+                                <option value="teddy">Teddy</option>
+                            </select>
+                        </p>
+                        <fieldset>
+                            <legend>Do you like radio buttons?</legend>
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="radioButtons" value="yes">
+                                        Yes
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="radioButtons" value="no">
+                                        No
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="radioButtons" value="none" checked>
+                                        None of your business
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <p>
+                            <label for="lifeMeaning">What is the meaning of life?</label>
+                            <textarea id="lifeMeaning" name="lifeMeaning" rows="5" cols="50" placeholder="Enter the correct answer here"></textarea>
+                        </p>
+                        <button type="submit">Send</button>
+                    </form>
+
+                    <!-- END OF THE NEW CODE -->
+
+            </div>             
+        </main>
+        <footer>
+
+            <hr>
+
+            <blockquote>
+                The only way to do great work is to love what you do.<br>
+                <cite>&mdash; <span class="author">Steve Jobs</span></cite>
+            </blockquote>
+
+            <p>
+                &copy; 2025 <a href="mailto:24057211@saultcollege.ca?subject=Message%20from%20CSD112%20Website">
+                    Fernando Lascala
+                </a>
+            </p>
+        </footer>
+        <br>
+        <a href="#top">◤ Back to top</a>
+    </div>
+    <br>
+</body>
+
+</html>
