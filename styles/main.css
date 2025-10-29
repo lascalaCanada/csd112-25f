@@ -66,22 +66,19 @@ html {
   background-color: #6eb0de; 
 } 
 
+/*
 body { 
   background-color: #e3f2fd;
   color: #333333;
-  /*
+  
   background-color: #F5FFE6;
-  */
+  
   border: 3px solid #93a36c;
   max-width: 960px; 
   margin: 0 auto;
   padding: 30px;
 }
-
-h1, h2, h3 { 
-  font-family: "Sansita", sans-serif; 
-  color: #0d47a1;
-} 
+*/
 
 p, li { 
   color: gray; 
@@ -98,6 +95,7 @@ p, li {
 a {
   color: #1565c0;
 }
+
 
 /*
   Header & Header NAV session
@@ -225,10 +223,10 @@ tbody tr:nth-child(even) td {
     font-family: Arial, sans-serif;
   }
 
-.font-red {
+.font-black {
   font-weight: bold;
   font-family: Arial, sans-serif;
-  color: rgb(28, 5, 114);
+  color: rgb(0, 0, 0);
 }
 
 .font-purple {
@@ -270,3 +268,121 @@ select:invalid {
   background-color: #ffebee;
 }
 
+
+
+/*
+
+
+
+
+  New CSS codes for lab #5
+
+
+
+
+*/
+
+/* 1. General Reset and Box Model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Ensures padding and border are included in element width/height */
+}
+
+/* 1.4–1.5: Body font, line height, and background */
+body {
+  /* Heading font from Google Fonts */
+  font-family: 'Montserrat';
+  line-height: 1.3; /* Improves readability */
+  background-color: #e3f2fd; /* Light blue background */
+  color: #333; /* Dark gray text */
+}
+
+/* 1.3: Heading font */
+h1, h2, h3, h4 {
+  /* Heading font from Google Fonts */
+  font-family: "Aclonica", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+  color: #0d47a1;
+}
+
+/* 1.6: Hyperlink styling */
+a {
+  text-decoration: none; /* No underline by default */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* 1.7: Ordered list style */
+ol {
+  list-style-type: upper-roman; /* Use uppercase Roman numerals */
+}
+
+/* 1.8: YouTube video border radius */
+iframe {
+  border-top-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+}
+
+/* 1.9: Radio button list cleanup */
+ul.radio-list {
+  padding: 0; /* Remove outer padding */
+  list-style: none; /* Remove bullets */
+}
+
+/* 2.1: Header navigation link styling */
+header nav a {
+  font-weight: bold; /* Bold text */
+  text-decoration: none; /* No underline even on hover */
+  text-transform: uppercase; /* All caps */
+  letter-spacing: 4px; /* Space between letters */
+}
+
+/* 3.1: Gradient heading (h1) */
+h1 {
+  background: linear-gradient(to right, #ff6a00, #ee0979); /* Gradient background */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+}
+
+/* 4.3–4.4: Bio section with columns */
+.bio {
+  column-count: 3; /* Three columns */
+  column-gap: 2em; /* Space between columns */
+}
+
+/* 4.5–4.6: Table spans all columns and spacing */
+.bio table {
+  column-span: all; /* Span across all columns */
+  margin-top: 1em; /* Space above table */
+}
+
+/* 4.7: Collapse table borders */
+table {
+  border-collapse: collapse; /* Merge adjacent borders */
+}
+
+/* 4.9: All images responsive */
+img {
+  max-width: 100%; /* Prevent overflow */
+}
+
+/* 4.10: Specific styling for self image */
+.img-self {
+  padding: 2%; /* Inner spacing */
+  background-color: white; /* White background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Subtle shadow */
+}
+
+/* 5.1–5.2: Footer styling */
+footer {
+  font-size: 75%; /* Smaller text */
+  text-align: center; /* Centered content */
+}
+
+/* 5.3–5.4: Back-to-top link styling */
+a[href="#top"] {
+  text-shadow: 2px 2px 4px #999; /* Soft shadow */
+  text-decoration: none; /* No underline on hover */
+}
