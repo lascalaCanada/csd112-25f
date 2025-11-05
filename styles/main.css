@@ -122,16 +122,6 @@ header nav {
   padding-right: 2em;
 }
 
-header nav ul {
-  margin: 0;
-  padding: 0;
-}
-
-header nav li {
-  display: inline;
-  list-style: none;
-}
-
 header nav a {
   display: inline-block;
   border-top: 4px solid transparent;
@@ -271,7 +261,7 @@ select:invalid {
 
 
 /*
-
+  555555555555555555555555
 
 
 
@@ -279,7 +269,7 @@ select:invalid {
 
 
 
-
+  555555555555555555555555
 */
 
 /* 1. General Reset and Box Model */
@@ -386,3 +376,167 @@ a[href="#top"] {
   text-shadow: 2px 2px 4px #999; /* Soft shadow */
   text-decoration: none; /* No underline on hover */
 }
+
+
+/*
+  #6 #6 #6 #6 #6 #6 #6 #6 #6
+
+
+
+  New CSS codes for lab #6
+
+
+
+  #6 #6 #6 #6 #6 #6 #6 #6 #6
+*/
+
+/* 1.2–1.4: Flex layout for navigation header */
+header nav ul {
+  display: flex;                          /* 1.3: Make header <ul> a flex container as required */
+  justify-content: center;                /* 1.4: Center items horizontally */
+  list-style: none;                       /* 1.2: Remove bullets from header list only */
+  padding: 0;
+  margin: 0;
+}
+
+/* 2.7: Hide all content <div>s inside .favourites by default */
+.favourites label + div {
+  display: none;                          /* Hide content until tab is selected */
+  width: 100%;                            /* 2.13: Ensure content spans full width */
+}
+
+/* 2.8: Show content <div> when its radio button is checked */
+.favourites input:checked + label + div {
+  display: block;                         /* Reveal selected tab content */
+}
+
+/* 2.9: Hide radio buttons inside .favourites */
+.favourites input[type="radio"] {
+  display: none;                          /* Keep radio buttons functional but invisible */
+}
+
+/* 2.10 & 2.12: Make .favourites a flex container that wraps */
+.favourites {
+  display: flex;                          /* Enable flex layout */
+  flex-wrap: wrap;                        /* Allow items to wrap to new rows */
+}
+
+/* 2.11: Ensure labels appear before content divs */
+.favourites label {
+  order: -1;                              /* Move labels before default-order content */
+}
+
+/* 2.14: Style all tab headings */
+.favourites label {
+  padding: 0.5em 1em;                     /* Add spacing around headings */
+  cursor: pointer;                        /* Make headings clickable */
+  background-color: #eee;               /* Default background */
+  border-bottom: 2px solid transparent;   /* Placeholder border */
+  font-weight: bold;
+}
+
+/* 2.14: Style selected tab heading */
+.favourites input:checked + label {
+  background-color: #d1c4e9;            /* Highlight selected tab */
+  border-bottom: 4px solid #6a1b9a;     /* Emphasize selection */
+}
+
+/* 2.14: Style content area of selected tab */
+.favourites label + div {
+  background-color: #f3f3f3;            /* Light background for content */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow */
+  padding: 1em;                           /* Inner spacing */
+  display: none;                          /* Hidden by default */
+}
+
+/* 2.14: Show selected content area */
+.favourites input:checked + label + div {
+  display: block;                         /* Reveal selected content */
+}
+
+/* 3.10: Make .gallery a grid container */
+.gallery {
+  display: grid;                          /* Enables grid layout */
+  
+  /* 3.11: Define 4 equal-width columns */
+  grid-template-columns: repeat(4, 1fr);
+  
+  /* 3.18: Add 10px gutters between grid items */
+  gap: 10px;
+}
+
+/* 3.12: Ensure all images are responsive */
+img {
+  max-width: 100%;                        /* Prevents overflow and distortion */
+}
+
+/* 3.13: Remove space below images in gallery */
+.gallery img {
+  display: block;                         /* Eliminates inline spacing artifacts */
+}
+
+/* 3.16: Make elements with .row-span-2 span 2 rows */
+.gallery .row-span-2 {
+  grid-row: span 2;                       /* Occupies 2 rows in grid */
+}
+
+/* 3.17: Make elements with .col-span-2 span 2 columns */
+.gallery .col-span-2 {
+  grid-column: span 2;                    /* Occupies 2 columns in grid */
+}
+
+/* 3.19: Force gallery images to fill their grid cell */
+.gallery img {
+  width: 100%;                            /* Fill container width */
+  height: 100%;                           /* Fill container height */
+}
+
+/* 3.20: Prevent image distortion by cropping */
+.gallery img {
+  object-fit: cover;                      /* Maintains aspect ratio while filling space */
+}
+
+/* 3.21: Scale gallery links on hover */
+.gallery a:hover {
+  transform: scale(1.1);                  /* Slight zoom effect */
+  transition: transform 0.2s ease-in-out; /* Smooth animation */
+}
+
+/* 4.4: Remove background and shadow from paperclip only */
+.paperclip {
+  background-color: transparent;          /* Remove inherited background */
+  box-shadow: none;                       /* Remove inherited shadow */
+}
+
+/* 4.5: Scale paperclip to 20% of container width */
+.paperclip {
+  width: 20%;                             /* Resize proportionally to selfie image */
+}
+
+/* 4.6: Make .bio hyperlinks block-level and positionable */
+.bio a {
+  display: block;                         /* Allows full image height */
+  position: relative;                     /* Establishes positioning context for paperclip */
+}
+
+/* 4.7: Position paperclip over top-right corner of selfie */
+.bio a .paperclip {
+  position: absolute;                     /* Enables overlay placement */
+  top: -2;                                /* Align to top edge */
+  right: 1;                               /* Align to right edge */
+}
+
+/* 5.1: Target ONLY the back-to-top link using href="#top" */
+a[href="#top"] {
+  margin-left: -25px;                     /* 5.2: Shift link slightly left */
+  position: sticky;                       /* 5.3: Enable sticky positioning */
+  bottom: 10px;                           /* 5.4: Stick 10px from bottom of viewport */
+  display: inline-block;                  /* 5.5: Allow transform to apply */
+}
+
+/* 5.6: Rotate link on hover */
+a[href="#top"]:hover {
+  transform: rotate(45deg);               /* Rotate upward on hover */
+  transition: transform 0.2s ease-in-out; /* Smooth animation */
+}
+
