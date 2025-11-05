@@ -6,7 +6,8 @@
     <meta name="author" content="Fernando Lascala">
     <meta name="description"
         content="Personal website for Fernando Lascala, showcasing favorite things and programming concepts for CSD112.">
-    <title>CSD112 - Lab#2, Lab#3, Lab#4, and Lab#5</title>
+    <!-- Found me! -->
+    <title>CSD112 - Lab#2</title>
     <link href="styles/normalize.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
 
@@ -15,26 +16,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Montserrat+Alternates:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kameron&family=Sansita:wght@900&display=swap" rel="stylesheet">
 
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
 
-
-    <style>
-        ul.useful-links {
-        padding: 0; /* 6.3.1 */
-        }
-
-        ul.useful-links li {
-        padding-left: 1em; /* 6.3.2 */
-        background-image: url('images/link.png'); /* 6.3.3 */
-        background-size: 10px 10px; /* 6.3.4 */
-        background-repeat: no-repeat; /* 6.3.5 */
-        background-position: left center; /* 6.3.6 */
-        list-style: none; /* remove default bullets */
-        }
-    </style>
-
+    <script src="scripts/buildGallery.js"></script> <!-- Load your JS file -->
 </head>
 
 <body>
@@ -43,29 +30,32 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a>&lt;Links&gt;</a></li>
+                    <li><a href="links.html">Links</a></li>
                     <li><a href="glossary.html">Glossary</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="lorem.html">Lorem</a></li>
-                    <li><a href="survey.html">Survey</a></li>
+                    <li><a>&lt;Lorem&gt;</a></li>
+                    <li><a href="survey.html">Survey</a></li>                    
                 </ul>
             </nav>
         </header>
         <main>
-            <h1>Useful Links!</h1>
-            <ul class="useful-links">
-                <li>
-                    <a href="https://validator.w3.org/nu/" title="HTML code validator!" target="_blank">
-                        HTML Validator
-                    </a>
-                </li>
-                <li>
-                    <a href="https://realfavicongenerator.net/" title="Favicon generator!" target="_blank">
-                        Favicon Generator
-                    </a>
-                </li>
-            </ul>
-            <br> <br>
+
+            <!-- BEGINNING OF THE CODE -->
+            <h1>Lorem</h1>
+
+            <div class="gallery">
+
+                <!-- ... repeat up to at least 15 images ... -->
+                <!-- JAVA SCRIPT TO RETURN A RANDOM IMAGE -->
+                <script>
+                    for (let count = 0; count < 16; count++) {
+                        buildGallery('.gallery', count + 1); // Inserts up to 16 images
+                    }
+                </script>
+
+            </div>
+
+            <!-- END OF THE CODE -->
         </main>
         <footer>
 

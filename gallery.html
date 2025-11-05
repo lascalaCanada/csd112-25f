@@ -15,26 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Montserrat+Alternates:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kameron&family=Sansita:wght@900&display=swap" rel="stylesheet">
 
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
 
-
-    <style>
-        ul.useful-links {
-        padding: 0; /* 6.3.1 */
-        }
-
-        ul.useful-links li {
-        padding-left: 1em; /* 6.3.2 */
-        background-image: url('images/link.png'); /* 6.3.3 */
-        background-size: 10px 10px; /* 6.3.4 */
-        background-repeat: no-repeat; /* 6.3.5 */
-        background-position: left center; /* 6.3.6 */
-        list-style: none; /* remove default bullets */
-        }
-    </style>
-
+    <script src="scripts/buildGallery.js"></script> <!-- Load your JS file -->
 </head>
 
 <body>
@@ -43,29 +29,37 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a>&lt;Links&gt;</a></li>
+                    <li><a href="links.html">Links</a></li>
                     <li><a href="glossary.html">Glossary</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a>&lt;Gallery&gt;</a></li>
                     <li><a href="lorem.html">Lorem</a></li>
                     <li><a href="survey.html">Survey</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <h1>Useful Links!</h1>
-            <ul class="useful-links">
-                <li>
-                    <a href="https://validator.w3.org/nu/" title="HTML code validator!" target="_blank">
-                        HTML Validator
-                    </a>
-                </li>
-                <li>
-                    <a href="https://realfavicongenerator.net/" title="Favicon generator!" target="_blank">
-                        Favicon Generator
-                    </a>
-                </li>
-            </ul>
-            <br> <br>
+
+            <!-- BEGINNING OF THE CODE -->
+            <!-- 3.4: Page heading -->
+            <h1>Gallery</h1>
+
+            <!-- 3.5–3.5.1: Grid container for images -->
+            <div class="gallery">
+
+                <!-- 3.6: First image (thumbnail links to full-size) -->
+                <!-- Add 14+ more images with unique lock values -->
+                <!-- ... repeat up to at least 15 images ... -->
+                <!-- JAVA SCRIPT TO RETURN A RANDOM IMAGE -->
+                <script>
+                    for (let count = 0; count < 16; count++) {
+                        buildGallery('.gallery'); // Inserts one image
+                    }
+                </script>
+
+            </div>
+
+
+            <!-- END OF THE CODE -->
         </main>
         <footer>
 
