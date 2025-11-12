@@ -540,3 +540,198 @@ a[href="#top"]:hover {
   transition: transform 0.2s ease-in-out; /* Smooth animation */
 }
 
+
+
+/*
+  #7 #7 #7 #7 #7 #7 #7 #7 #7
+
+  New CSS codes for lab #7
+
+  #7 #7 #7 #7 #7 #7 #7 #7 #7
+*/
+
+/* 2. Responsive Courses Table in .bio */
+@media screen and (max-width: 600px) {
+  .bio table {
+    display: block;
+  }
+
+  .bio table caption {
+    caption-side: top;
+    font-weight: bold;
+    padding: 0.5em 1rem;
+  }
+
+  .bio thead,
+  .bio tfoot,
+  .bio th {
+    display: none;
+  }
+
+  .bio td {
+    display: block;
+    padding: 0 1rem;
+  }
+
+  .bio td:first-of-type {
+    padding-top: 0.3em;
+    font-weight: bold;
+  }
+
+  .bio td:last-of-type {
+    padding-bottom: 0.3em;
+    font-style: italic;
+    font-size: 0.8em;
+    position: relative;
+  }
+
+  .bio td:last-of-type::after {
+    content: " hrs/wk";
+  }
+}
+
+/* 3. Float Fix for Images on Narrow Screens */
+@media screen and (max-width: 600px) {
+  .float-left {
+    float: none !important;
+    display: block;
+    margin: 1em auto;
+  }
+}
+
+/* 3. Gallery Grid Fix for Very Narrow Screens */
+@media screen and (max-width: 450px) {
+  .gallery .col-span-2 {
+    grid-column: span 1;
+  }
+
+  .gallery .row-span-2 {
+    grid-row: span 1;
+  }
+
+  .gallery img {
+    object-fit: contain;
+  }
+}
+
+/* 4. Favourites Tab Fix for Narrow Screens */
+@media screen and (max-width: 800px) {
+  .favourites {
+    flex-direction: column;
+  }
+
+  .favourites > label {
+    order: 0;
+  }
+
+  .favourites label {
+    width: 100%;
+    margin-bottom: 0.5em;
+    border-bottom: none;
+    border-left: 4px solid transparent;
+    text-align: left;
+  }
+
+  .favourites input:checked + label {
+    border-left-color: #6a1b9a;
+    background-color: #d1c4e9;
+  }
+
+  .favourites label + div {
+    margin-bottom: 1em;
+  }
+}
+
+/* 5. Responsive Navigation Menu Fix */
+@media screen and (max-width: 700px) {
+  /* 5.1.1: Stack nav items vertically and center them */
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 5.1.2: Adjust nav link padding and styling */
+  header nav a {
+    padding-top: 0.5em;
+    border-top: none;
+  }
+
+  header nav a:hover {
+    border-top: none;
+    text-decoration: underline;
+  }
+}
+
+
+/*
+  #7 #7 #7 #7 #7 #7 #7 #7 #7
+
+  New CSS codes for lab #7 — Sandwich Menu
+
+  #7 #7 #7 #7 #7 #7 #7 #7 #7
+*/
+
+/* 6.2: Hide toggle and icon by default */
+#menu-toggle,
+.sandwich-icon {
+  display: none;
+}
+
+/* 6.3–6.4: Responsive sandwich menu for screens < 700px */
+@media screen and (max-width: 700px) {
+  /* 6.4.1: Style sandwich icon */
+  .sandwich-icon {
+    display: block;
+    width: 40px;
+    height: 25px;
+    border-top: 5px solid #6a1b9a; /* Choose your color */
+    cursor: pointer;
+    margin: 1em auto;
+    position: relative;
+  }
+
+  /* 6.4.2: Add bars using pseudo-elements */
+  .sandwich-icon::before,
+  .sandwich-icon::after {
+    content: "";
+    display: block;
+    width: 40px;
+    border-top: 5px solid #6a1b9a;
+    position: absolute;
+    left: 0;
+  }
+
+  /* 6.4.4–6.4.5: Position bars */
+  .sandwich-icon::before {
+    top: 5px;
+  }
+
+  .sandwich-icon::after {
+    top: 15px;
+  }
+
+  /* 6.4.6: Collapse nav list by default */
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease-in-out;
+  }
+
+  /* 6.4.7: Expand nav list when menu-toggle is checked */
+  #menu-toggle:checked + .sandwich-icon + ul {
+    height: 14em; /* Adjust based on number of links */
+  }
+
+  /* 5.1.2: Adjust nav link styling */
+  header nav a {
+    padding-top: 0.5em;
+    border-top: none;
+  }
+
+  header nav a:hover {
+    border-top: none;
+    text-decoration: underline;
+  }
+}

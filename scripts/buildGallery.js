@@ -17,11 +17,13 @@ function buildGallery(containerSelector, imageIndex = 0) {
     img.src = thumbSize;                                                // thumb size for each image
     img.alt = `Filter image ${imageIndex}`                              // alt customized per image
     img.title = `Click to view image ${imageIndex} in full size`;       // hint customized per image
+    img.classList.add(`float-left`);
 
 
     a.appendChild(img);
     gallery.appendChild(a);
 }
+
 
 
 
