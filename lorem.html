@@ -11,6 +11,23 @@
     <link href="styles/normalize.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
 
+    <!-- Lab #7 -->
+    <style>
+        .float-left {
+            float: left;
+            margin-right: 1em;
+            margin-bottom: 1em;
+        }
+
+        @media screen and (max-width: 600px) {
+            .float-left {
+            float: none !important;
+            display: block;
+            margin: 1em auto;
+            }
+        }
+    </style>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Montserrat+Alternates:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -28,6 +45,12 @@
     <div class="width-wrap">
         <header id="top">
             <nav>
+
+                <!-- Lab #7 — Sandwich Menu Toggle -->
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="sandwich-icon"></label>
+                <!-- End Lab #7 Toggle -->
+
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="links.html">Links</a></li>
