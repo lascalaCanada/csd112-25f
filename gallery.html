@@ -21,12 +21,22 @@
     <link rel="manifest" href="site.webmanifest">
 
     <script src="scripts/buildGallery.js"></script> <!-- Load your JS file -->
+
+    <!-- Lab #8 - Place your scripts here, before closing body -->
+    <script src="scripts/appetizers.js"></script>
+    <script src="scripts/orderOnline.js"></script>
+    <script src="scripts/gallery.js"></script>
+    <script src="scripts/sandwichMenu.js"></script>
+    <!-- END Lab #8 -  Place your scripts here, before closing body -->    
+
 </head>
 
 <body>
     <div class="width-wrap">
         <header id="top">
-            <nav>
+            <!-- Lab #8 - HTML adjustments -->
+            <nav id="nav-bar">
+            <!-- End Lab #8 - HTML adjustments -->
 
                 <!-- Lab #7 — Sandwich Menu Toggle -->
                 <input type="checkbox" id="menu-toggle">
@@ -40,11 +50,21 @@
                     <li><a>&lt;Gallery&gt;</a></li>
                     <li><a href="lorem.html">Lorem</a></li>
                     <li><a href="survey.html">Survey</a></li>
+
+                    <!-- Lab #8 - JavaScript menus -->
+                    <li><a href="#" id="nav-appetizers">Appetizers</a></li>     <!-- Lab #8 - nav-appetizers -->
+                    <li><a href="#" id="nav-order">Order Online</a></li>        <!-- Lab #8 - nav-order -->
+                    <li><a href="#" id="nav-gallery">Food Pictures</a></li>     <!-- Lab #8 - nav-gallery -->                    
+                    <!-- End Lab #8 - JavaScript menus -->
                 </ul>
             </nav>
         </header>
         <main>
 
+            <!-- Placeholder for DOM tabs -->
+            <div id="main-content"></div>
+
+            <!-- END of Placeholder for DOM tabs -->
             <!-- BEGINNING OF THE CODE -->
             <!-- 3.4: Page heading -->
             <h1>Gallery</h1>
@@ -53,8 +73,8 @@
             <div class="gallery">
 
                 <!-- 3.6: First image (thumbnail links to full-size) -->
-                <!-- Add 14+ more images with unique lock values -->
-                <!-- ... repeat up to at least 15 images ... -->
+                <!-- Add 15+ more images with unique lock values -->
+                <!-- ... repeat up to at least 16 images ... -->
                 <!-- JAVA SCRIPT TO RETURN A RANDOM IMAGE -->
                 <script>
                     for (let count = 0; count < 16; count++) {

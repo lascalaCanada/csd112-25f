@@ -7,12 +7,59 @@
   box-sizing: border-box;
 }
 
+html { 
+  background-color: #6eb0de; 
+} 
 
+body {
+  /* Heading font from Google Fonts */
+  font-family: 'Montserrat';
+  line-height: 1.3; /* Improves readability */
+  background-color: #e3f2fd; /* Light blue background */
+  color: #333; /* Dark gray text */
+}
+
+h1, h2, h3, h4 {
+  /* Heading font from Google Fonts */
+  font-family: "Aclonica", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+  color: #0d47a1;
+}
+
+a {
+  color: #1565c0;
+  text-decoration: none; /* No underline by default */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+ol {
+  list-style-type: upper-roman; /* Use uppercase Roman numerals */
+}
+
+p, li { 
+  color: gray; 
+  font-family: "Kameron", serif; 
+}
+
+iframe {
+  border-top-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+}
+
+.key-points {
+  list-style-position: inside;
+  padding-left: 5;
+  margin-left: 20px;
+}
+
+/* WIDTH-WRAP CONTAINER */
 .width-wrap {
-/* 
-    2.1, 2.2, and 2.3
-    BOX-SIZING == BORDER-BOX for ALL elements in the html files 
-*/
+  /*
+      2.1, 2.2, and 2.3
+      BOX-SIZING == BORDER-BOX for ALL elements in the html files 
+  */
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -42,69 +89,10 @@
   margin-bottom: 3em;
 }
 
-
-
-footer hr {
-  width: clamp(300px, 100%, 890px);
-  margin-top: 3em;
-  margin-bottom: 2em;
-  border: none;
-  border-bottom: 3px dotted #0c0113;
-}
-
-dt::after {
-  content: ":";
-}
-
-
-
-p, li { 
-  color: gray; 
-}
-
-html { 
-  background-color: #6eb0de; 
-} 
-
-/*
-body { 
-  background-color: #e3f2fd;
-  color: #333333;
-  
-  background-color: #F5FFE6;
-  
-  border: 3px solid #93a36c;
-  max-width: 960px; 
-  margin: 0 auto;
-  padding: 30px;
-}
-*/
-
-p, li { 
-  color: gray; 
-  font-family: "Kameron", serif; 
-} 
-
-.key-points {
-  list-style-position: inside;
-  padding-left: 5;
-  margin-left: 20px;
-}
-
-
-a {
-  color: #1565c0;
-}
-
-
 /*
   Header & Header NAV session
   Additional information added
 */
-
-header nav a {
-  color: #7503a1;
-}
 
 ::selection {
   background-color: #fff59d;
@@ -122,27 +110,46 @@ header nav {
   padding-right: 2em;
 }
 
-header nav a {
-  display: inline-block;
-  border-top: 4px solid transparent;
-  padding: 1em 1em 0.5em 1em;
-  text-decoration: none;
-}
-
 header nav a:hover {
   border-top-color: #d84315;
 }
 
+/* NAV WIDTH CONTROL TO PREVENT OVERFLOW */
+nav {
+  max-width: 100%;
+  overflow-x: hidden;
+  white-space: normal;
+  box-sizing: border-box;
+}
+
+header nav ul {
+  display: flex;                          /* 1.3: Make header <ul> a flex container as required */
+  justify-content: center;                /* 1.4: Center items horizontally */
+  list-style: none;                       /* 1.2: Remove bullets from header list only */
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;                        /* allow wrapping so it never exceeds viewport */
+}
+
+header nav a {
+  font-weight: bold;                  /* Bold text */
+  text-transform: uppercase;          /* All caps */
+  letter-spacing: 4px;                /* Space between letters */
+
+  display: inline-block;
+  border-top: 4px solid transparent;
+  padding: 1em 1em 0.5em 1em;
+  color: #8503a1;
+}
 
 /*
   Image session
 */
 
 img {
-  max-width: 300px;
-  max-height: 300px;
-  width: auto;        /* keep the proportion */
-  height: auto;       /* keep the proportion */
+  max-width: 100%;                          /* Prevent overflow */
+  height: auto;                             /* keep the proportion */
+  display: block;                           /* removes inline gaps */
 }
 
 .img-logo-limitation {
@@ -159,7 +166,6 @@ img {
   max-width: 150px;
   height: auto;
 }
-
 
 .tables-glossary {
   width: 100%;
@@ -179,13 +185,7 @@ img {
   /*border-collapse: collapse;*/
   text-align: center;   /* every text is centralized in the table */
 }
-  
-  /*
-    .td {
-      padding: 15px;
-      vertical-align: middle;
-    }
-  */
+
 th, td {
   padding: 0.3em 1em;
 }
@@ -202,16 +202,15 @@ tbody tr:nth-child(even) td {
   background-color: rgba(0, 0, 0, 0.15);
 }
 
-
 .td-name {
-    text-align: left;
+  text-align: left;
 }
 
-  .tables-name {
-    margin-top: 8px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-  }
+.tables-name {
+  margin-top: 8px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
 
 .font-black {
   font-weight: bold;
@@ -258,146 +257,111 @@ select:invalid {
   background-color: #ffebee;
 }
 
-
-
 /*
   555555555555555555555555
 
-
-
   New CSS codes for lab #5
-
-
 
   555555555555555555555555
 */
 
-/* 1. General Reset and Box Model */
-*,
-*::before,
-*::after {
-  box-sizing: border-box; /* Ensures padding and border are included in element width/height */
-}
-
-/* 1.4–1.5: Body font, line height, and background */
-body {
-  /* Heading font from Google Fonts */
-  font-family: 'Montserrat';
-  line-height: 1.3; /* Improves readability */
-  background-color: #e3f2fd; /* Light blue background */
-  color: #333; /* Dark gray text */
-}
-
-/* 1.3: Heading font */
-h1, h2, h3, h4 {
-  /* Heading font from Google Fonts */
-  font-family: "Aclonica", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
-  color: #0d47a1;
-}
-
-/* 1.6: Hyperlink styling */
-a {
-  text-decoration: none; /* No underline by default */
-}
-
-a:hover {
-  text-decoration: underline; /* Underline on hover */
-}
-
-/* 1.7: Ordered list style */
-ol {
-  list-style-type: upper-roman; /* Use uppercase Roman numerals */
-}
-
-/* 1.8: YouTube video border radius */
-iframe {
-  border-top-right-radius: 2em;
-  border-bottom-left-radius: 2em;
-}
-
-/* 1.9: Radio button list cleanup */
-ul.radio-list {
-  padding: 0; /* Remove outer padding */
-  list-style: none; /* Remove bullets */
-}
-
-/* 2.1: Header navigation link styling */
-header nav a {
-  font-weight: bold; /* Bold text */
-  text-decoration: none; /* No underline even on hover */
-  text-transform: uppercase; /* All caps */
-  letter-spacing: 4px; /* Space between letters */
-}
-
 /* 3.1: Gradient heading (h1) */
 h1 {
-  background: linear-gradient(to right, #ff6a00, #ee0979); /* Gradient background */
-  -webkit-background-clip: text; /* Clip background to text */
-  -webkit-text-fill-color: transparent; /* Make text transparent to show gradient */
+  background: linear-gradient(to right, #ff6a00, #ee0979);  /* Gradient background */
+  -webkit-background-clip: text;                            /* Clip background to text */
+  -webkit-text-fill-color: transparent;                     /* Make text transparent to show gradient */
 }
 
 /* 4.3–4.4: Bio section with columns */
 .bio {
-  column-count: 3; /* Three columns */
-  column-gap: 2em; /* Space between columns */
+  column-count: 3;                          /* Three columns */
+  column-gap: 2em;                          /* Space between columns */
 }
 
 /* 4.5–4.6: Table spans all columns and spacing */
 .bio table {
-  column-span: all; /* Span across all columns */
-  margin-top: 1em; /* Space above table */
+  column-span: all;                         /* Span across all columns */
+  margin-top: 1em;                          /* Space above table */
 }
 
 /* 4.7: Collapse table borders */
 table {
-  border-collapse: collapse; /* Merge adjacent borders */
+  border-collapse: collapse;                /* Merge adjacent borders */
 }
 
-/* 4.9: All images responsive */
-img {
-  max-width: 100%; /* Prevent overflow */
-}
+/* 4.9: All images responsive — already set above with img { max-width: 100% } */
 
 /* 4.10: Specific styling for self image */
 .img-self {
-  padding: 2%; /* Inner spacing */
-  background-color: white; /* White background */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Subtle shadow */
+  padding: 2%;                              /* Inner spacing */
+  background-color: white;                  /* White background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);    /* Subtle shadow */
+}
+
+/* 4.4: Remove background and shadow from paperclip only */
+.paperclip {
+  background-color: transparent;          /* Remove inherited background */
+  box-shadow: none;                       /* Remove inherited shadow */
+}
+
+/* 4.5: Scale paperclip to 20% of container width */
+.paperclip {
+  width: 20%;                             /* Resize proportionally to selfie image */
+}
+
+/* 4.6: Make .bio hyperlinks block-level and positionable */
+.bio a {
+  display: block;                         /* Allows full image height */
+  position: relative;                     /* Establishes positioning context for paperclip */
+}
+
+/* 4.7: Position paperclip over top-right corner of selfie */
+.bio a .paperclip {
+  position: absolute;                     /* Enables overlay placement */
+  top: -2;                                /* Align to top edge */
+  right: 1;                               /* Align to right edge */
 }
 
 /* 5.1–5.2: Footer styling */
 footer {
-  font-size: 75%; /* Smaller text */
-  text-align: center; /* Centered content */
+  font-size: 75%;                           /* Smaller text */
+  text-align: center;                       /* Centered content */
+}
+
+footer hr {
+  width: clamp(300px, 100%, 890px);
+  margin-top: 3em;
+  margin-bottom: 2em;
+  border: none;
+  border-bottom: 3px dotted #0c0113;
 }
 
 /* 5.3–5.4: Back-to-top link styling */
 a[href="#top"] {
   text-shadow: 2px 2px 4px #999; /* Soft shadow */
   text-decoration: none; /* No underline on hover */
+  margin-left: -25px;                     /* 5.2: Shift link slightly left */
+  position: sticky;                       /* 5.3: Enable sticky positioning */
+  bottom: 10px;                           /* 5.4: Stick 10px from bottom of viewport */
+  display: inline-block;                  /* 5.5: Allow transform to apply */
 }
 
+/* 5.6: Rotate link on hover */
+a[href="#top"]:hover {
+  transform: rotate(45deg);               /* Rotate upward on hover */
+  transition: transform 0.2s ease-in-out; /* Smooth animation */
+}
 
 /*
   #6 #6 #6 #6 #6 #6 #6 #6 #6
 
-
-
   New CSS codes for lab #6
-
-
 
   #6 #6 #6 #6 #6 #6 #6 #6 #6
 */
 
 /* 1.2–1.4: Flex layout for navigation header */
-header nav ul {
-  display: flex;                          /* 1.3: Make header <ul> a flex container as required */
-  justify-content: center;                /* 1.4: Center items horizontally */
-  list-style: none;                       /* 1.2: Remove bullets from header list only */
-  padding: 0;
-  margin: 0;
-}
+/* already defined above in header nav ul with flex + center */
 
 /* 2.7: Hide all content <div>s inside .favourites by default */
 .favourites label + div {
@@ -430,21 +394,21 @@ header nav ul {
 .favourites label {
   padding: 0.5em 1em;                     /* Add spacing around headings */
   cursor: pointer;                        /* Make headings clickable */
-  background-color: #eee;               /* Default background */
+  background-color: #eee;                 /* Default background */
   border-bottom: 2px solid transparent;   /* Placeholder border */
   font-weight: bold;
 }
 
 /* 2.14: Style selected tab heading */
 .favourites input:checked + label {
-  background-color: #d1c4e9;            /* Highlight selected tab */
-  border-bottom: 4px solid #6a1b9a;     /* Emphasize selection */
+  background-color: #d1c4e9;              /* Highlight selected tab */
+  border-bottom: 4px solid #6a1b9a;       /* Emphasize selection */
 }
 
 /* 2.14: Style content area of selected tab */
 .favourites label + div {
-  background-color: #f3f3f3;            /* Light background for content */
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow */
+  background-color: #f3f3f3;              /* Light background for content */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);   /* Soft shadow */
   padding: 1em;                           /* Inner spacing */
   display: none;                          /* Hidden by default */
 }
@@ -457,18 +421,11 @@ header nav ul {
 /* 3.10: Make .gallery a grid container */
 .gallery {
   display: grid;                          /* Enables grid layout */
-  
-  /* 3.11: Define 4 equal-width columns */
-  grid-template-columns: repeat(4, 1fr);
-  
-  /* 3.18: Add 10px gutters between grid items */
-  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);  /* 3.11: Define 4 equal-width columns */
+  gap: 10px;                              /* 3.18: Add 10px gutters */
 }
 
-/* 3.12: Ensure all images are responsive */
-img {
-  max-width: 100%;                        /* Prevents overflow and distortion */
-}
+/* 3.12: Ensure all images are responsive — handled above with img selector */
 
 /* 3.13: Remove space below images in gallery */
 .gallery img {
@@ -502,52 +459,12 @@ img {
   transition: transform 0.2s ease-in-out; /* Smooth animation */
 }
 
-/* 4.4: Remove background and shadow from paperclip only */
-.paperclip {
-  background-color: transparent;          /* Remove inherited background */
-  box-shadow: none;                       /* Remove inherited shadow */
-}
-
-/* 4.5: Scale paperclip to 20% of container width */
-.paperclip {
-  width: 20%;                             /* Resize proportionally to selfie image */
-}
-
-/* 4.6: Make .bio hyperlinks block-level and positionable */
-.bio a {
-  display: block;                         /* Allows full image height */
-  position: relative;                     /* Establishes positioning context for paperclip */
-}
-
-/* 4.7: Position paperclip over top-right corner of selfie */
-.bio a .paperclip {
-  position: absolute;                     /* Enables overlay placement */
-  top: -2;                                /* Align to top edge */
-  right: 1;                               /* Align to right edge */
-}
-
-/* 5.1: Target ONLY the back-to-top link using href="#top" */
-a[href="#top"] {
-  margin-left: -25px;                     /* 5.2: Shift link slightly left */
-  position: sticky;                       /* 5.3: Enable sticky positioning */
-  bottom: 10px;                           /* 5.4: Stick 10px from bottom of viewport */
-  display: inline-block;                  /* 5.5: Allow transform to apply */
-}
-
-/* 5.6: Rotate link on hover */
-a[href="#top"]:hover {
-  transform: rotate(45deg);               /* Rotate upward on hover */
-  transition: transform 0.2s ease-in-out; /* Smooth animation */
-}
-
-
-
 /*
-  #7 #7 #7 #7 #7 #7 #7 #7 #7
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
 
-  New CSS codes for lab #7
+  New CSS codes for lab #8
 
-  #7 #7 #7 #7 #7 #7 #7 #7 #7
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
 */
 
 /* 2. Responsive Courses Table in .bio */
@@ -592,6 +509,7 @@ a[href="#top"]:hover {
 
 /* 3. Float Fix for Images on Narrow Screens */
 @media screen and (max-width: 600px) {
+
   .float-left {
     float: none !important;
     display: block;
@@ -662,13 +580,12 @@ a[href="#top"]:hover {
   }
 }
 
-
 /*
-  #7 #7 #7 #7 #7 #7 #7 #7 #7
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
 
-  New CSS codes for lab #7 — Sandwich Menu
+  New CSS codes for lab #8 — Sandwich Menu
 
-  #7 #7 #7 #7 #7 #7 #7 #7 #7
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
 */
 
 /* 6.2: Hide toggle and icon by default */
@@ -703,11 +620,13 @@ a[href="#top"]:hover {
 
   /* 6.4.4–6.4.5: Position bars */
   .sandwich-icon::before {
-    top: 5px;
+    /*top: 5px;*/
+    top: 10px;
   }
 
   .sandwich-icon::after {
-    top: 15px;
+    /*top: 15px;*/
+    top: 10px;
   }
 
   /* 6.4.6: Collapse nav list by default */
@@ -734,4 +653,330 @@ a[href="#top"]:hover {
     border-top: none;
     text-decoration: underline;
   }
+}
+
+/*
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+
+  Lab #8 — PART 1: Appetizer’s Tab
+  DOM‑only implementation with Flexbox layout
+
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+*/
+
+/* 1.1: Shared tab content (hidden by default) */
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+
+/* 1.2: Appetizer tab container with flexbox */
+#tab-appetizers {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* spacing between items */
+}
+
+/* 1.3: Individual appetizer items */
+.appetizer-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  flex: 1;
+  text-align: center;
+}
+
+/*
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+
+  Lab #8 — PART 2: Order Online Tab
+  Form styling and layout
+
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+*/
+
+/* 2.1: Order tab container */
+#tab-order {
+  display: block;
+  padding: 20px;
+}
+
+/* 2.2: Form layout */
+#tab-order form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+/* 2.3: Labels */
+#tab-order label {
+  font-weight: bold;
+}
+
+/* 2.4: Inputs and textarea */
+#tab-order input,
+#tab-order textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 2.5: Submit button */
+#tab-order button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#tab-order button:hover {
+  background-color: #45a049;
+}
+
+/*
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+
+  Lab #8 — BONUS 1: Sandwich Menu Styling
+  Responsive toggle with pseudo-elements
+
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+*/
+
+/* 7.1: Hide toggle and icon by default */
+#menu-toggle,
+.sandwich-icon {
+  display: none;
+}
+
+/* 7.2: Media query for narrow screens */
+@media (max-width: 768px) {
+  /* 7.2.1: Show sandwich icon */
+  .sandwich-icon {
+    display: block;
+    width: 40px;
+    height: 25px;
+    border-top: 5px solid #333; /* top bar */
+    cursor: pointer;
+    margin: 1em auto;
+    position: relative;           /* anchor for pseudo-elements */
+  }
+
+  /* 7.2.2: Add ::before and ::after bars */
+  .sandwich-icon::before,
+  .sandwich-icon::after {
+    content: "";
+    display: block;
+    width: 40px;
+    border-top: 5px solid #333;
+    position: absolute;
+    left: 0;
+  }
+
+  .sandwich-icon::before {
+    top: 5px;                     /* second bar */
+  }
+
+  .sandwich-icon::after {
+    top: 15px;                    /* third bar */
+  }
+
+  /* 7.2.3: Collapse nav list by default */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease-in-out;
+  }
+
+  /* 7.2.4: Expand nav list when toggle checked */
+  #menu-toggle:checked + .sandwich-icon + ul {
+    height: 200px;                /* adjust based on number of links */
+  }
+}
+
+/*
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+
+  Lab #8 — BONUS 2: Animated Sandwich-to-X Transition
+  Transform bars into an X when menu is shown
+
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+*/
+
+/* 8.1: Base sandwich icon bars */
+.sandwich-icon {
+  transition: all 0.3s ease-in-out;     /* smooth animation */
+}
+
+.sandwich-icon::before,
+.sandwich-icon::after {
+  transition: all 0.3s ease-in-out;     /* animate transforms */
+}
+
+/* 8.2: When menu-toggle is checked, animate bars */
+#menu-toggle:checked + .sandwich-icon {
+  border-top-color: transparent;        /* hide middle bar */
+}
+
+#menu-toggle:checked + .sandwich-icon::before {
+  transform: rotate(45deg);
+  top: 10px;                            /* center stroke */
+}
+
+#menu-toggle:checked + .sandwich-icon::after {
+  transform: rotate(-45deg);
+  top: 10px;                            /* center stroke */
+}
+
+/*
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+
+  Lab #8 — PART 3: Food Pictures Gallery Tab
+  Grid layout and image styling
+
+  #8 #8 #8 #8 #8 #8 #8 #8 #8
+*/
+
+/* 3.1: Gallery tab container */
+#tab-gallery {
+  display: block;
+  padding: 20px;
+}
+
+/* 3.2: Grid layout for images */
+/*
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+  grid-auto-rows: auto;
+  gap: 15px;
+  justify-items: center;
+}
+*/
+
+/*
+
+  LASCALA LASCALA LASCALA LASCALA LASCALA LASCALA LASCALA LASCALA LASCALA
+
+*/
+
+/* 
+
+    all images in a single roll 
+    
+*/
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: auto;
+  gap: 15px;
+}
+
+/* 
+
+    Three lines (stacked rows) 
+  
+*/
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  grid-auto-rows: auto;
+  gap: 15px;
+}
+
+/* 
+
+          X - Shape Layout 
+
+*/
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  gap: 10px;
+}
+
+.gallery-item:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.gallery-item:nth-child(2) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.gallery-item:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.gallery-item:nth-child(4) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.gallery-item:nth-child(5) {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+
+/*
+
+  Responsive Control
+
+*/
+
+/* Default: one line */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+/* Medium screens: 3 lines */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small screens: X layout */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 150px);
+  }
+  .gallery-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .gallery-item:nth-child(2) { grid-column: 3; grid-row: 1; }
+  .gallery-item:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .gallery-item:nth-child(4) { grid-column: 1; grid-row: 3; }
+  .gallery-item:nth-child(5) { grid-column: 3; grid-row: 3; }
+}
+
+/*
+
+  LASCALA LASCALA LASCALA LASCALA LASCALA LASCALA LASCALA LASCALA LASCALA
+
+*/
+
+
+/* 3.3: Individual gallery items */
+.gallery-item {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
 }
