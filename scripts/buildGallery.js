@@ -1,28 +1,25 @@
 
 function buildGallery(containerSelector, imageIndex = 0) {
-  
-    const gallery = document.querySelector(containerSelector);
+  const gallery = document.querySelector(containerSelector);
 
-    const lock = Math.floor(Math.random() * 1000);                      // random lock value
-    const fullSize = `https://loremflickr.com/1024/1024/?lock=${lock}`; // alleatory full size immage
-    const thumbSize = `https://loremflickr.com/300/300?lock=${lock}`;   // alleatory thumb size immage
+  const lock = Math.floor(Math.random() * 1000);
+  const fullSize = `https://loremflickr.com/1024/1024/?lock=${lock}`;
+  const thumbSize = `https://loremflickr.com/300/300?lock=${lock}`;
 
+  const a = document.createElement('a');
+  a.href = fullSize;
+  a.target = "_blank";
 
-    const a = document.createElement('a');
-    a.href = fullSize;                                                  // image in full size
-    a.target = "_blank";                                                // new tab in the browser
+  const img = document.createElement('img');
+  img.src = thumbSize;
+  img.alt = `Filter image ${imageIndex}`;
+  img.title = `Click to view image ${imageIndex} in full size`;
+  img.classList.add("gallery-item");   // ✅ use gallery-item instead of float-left
 
-
-    const img = document.createElement('img');
-    img.src = thumbSize;                                                // thumb size for each image
-    img.alt = `Filter image ${imageIndex}`                              // alt customized per image
-    img.title = `Click to view image ${imageIndex} in full size`;       // hint customized per image
-    img.classList.add(`float-left`);
-
-
-    a.appendChild(img);
-    gallery.appendChild(a);
+  a.appendChild(img);
+  gallery.appendChild(a);
 }
+
 
 
 

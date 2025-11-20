@@ -21,12 +21,23 @@
     <link rel="manifest" href="site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Better visibility on mobile apps -->
 
+
+    <!-- Lab #8 - Place your scripts here, before closing body -->
+    <script src="scripts/appetizers.js"></script>
+    <script src="scripts/orderOnline.js"></script>
+    <script src="scripts/gallery.js"></script>
+    <script src="scripts/sandwichMenu.js"></script>
+    <!-- END Lab #8 -  Place your scripts here, before closing body -->    
+
 </head>
 
 <body>
     <div class="width-wrap">
         <header id="top">
-            <nav>
+
+            <!-- Lab #8 - HTML adjustments -->
+            <nav id="nav-bar">
+            <!-- End Lab #8 - HTML adjustments -->
 
                 <!-- Lab #7 — Sandwich Menu Toggle -->
                 <input type="checkbox" id="menu-toggle">
@@ -40,10 +51,23 @@
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="lorem.html">Lorem</a></li>
                     <li><a href="survey.html">Survey</a></li>
+
+                    <!-- Lab #8 - JavaScript menus -->
+                    <li><a href="#" id="nav-appetizers">Appetizers</a></li>     <!-- Lab #8 - nav-appetizers -->
+                    <li><a href="#" id="nav-order">Order Online</a></li>        <!-- Lab #8 - nav-order -->
+                    <li><a href="#" id="nav-gallery">Food Pictures</a></li>     <!-- Lab #8 - nav-gallery -->                    
+                    <!-- End Lab #8 - JavaScript menus -->
                 </ul>
             </nav>
         </header>
         <main>
+
+            <!-- Placeholder for DOM tabs -->
+            <div id="main-content">
+                
+            </div>
+            <!-- END of Placeholder for DOM tabs -->
+
             <h1>Welcome to Fernando's Website!</h1>
 
             <div class="bio">
@@ -81,7 +105,7 @@
                         patterns like MVC (Model-View-Controller) helps separate concerns in a web application, making it easier
                         to update one part without affecting others. This disciplined approach not only improves code quality
                         but also enhances collaboration among developers, as logically organized code is more intuitive for
-                        others to read and understand, ultimately leading to more robust and successful projects.
+                        others to read and , ultimately leading to more robust and successful projects.
                     </p>
                 </div>
 
@@ -251,6 +275,7 @@
         <a href="#top">◤ Back to top</a>
     </div>
     <br>
+
 </body>
 
 </html>
